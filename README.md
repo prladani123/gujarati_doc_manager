@@ -1,0 +1,1 @@
+# gujarati_doc_manager
