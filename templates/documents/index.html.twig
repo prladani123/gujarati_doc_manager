@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Documents{% endblock %}
+
+{% block body %}
+<h1>Documents</h1>
+<a href="{{ path('app_documents_new') }}" class="btn btn-success mb-3">Create New Document</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for document in documents %}
+            <tr>
+                <td>{{ document.title }}</td>
+                <td>{{ document.createdAt|date('Y-m-d H:i') }}</td>
+                <td>
+                    <a href="{{ path('app_documents_export_pdf', {'id': document.id}) }}" class="btn btn-sm btn-primary">Export PDF</a>
+                    <a href="{{ path('app_documents_export_word', {'id': document.id}) }}" class="btn btn-sm btn-secondary">Export Word</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{{ knp_pagination_render(documents) }}
+{% endblock %}

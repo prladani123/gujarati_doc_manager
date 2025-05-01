@@ -1,0 +1,59 @@
+{
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/flex": "*",
+        "symfony/framework-bundle": "*",
+        "symfony/http-foundation": "*",
+        "symfony/http-kernel": "*",
+        "symfony/routing": "*",
+        "symfony/security-bundle": "*",
+        "symfony/validator": "*",
+        "symfony/twig-bundle": "*",
+        "symfony/maker-bundle": "^1.43",
+        "symfony/form": "*",
+        "knplabs/knp-paginator-bundle": "^5.0",
+        "friendsofsymfony/ckeditor-bundle": "^2.0",
+        "mpdf/mpdf": "^8.1",
+        "phpoffice/phpword": "^1.0",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.13",
+        "doctrine/doctrine-migrations-bundle": "^3.4",
+        "doctrine/orm": "^3.3"
+    },
+    "require-dev": {
+        "symfony/debug-bundle": "*",
+        "symfony/var-dumper": "*",
+        "symfony/stopwatch": "6.3.*",
+        "symfony/web-profiler-bundle": "6.3.*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.3.*"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true
+        }
+    }
+}
